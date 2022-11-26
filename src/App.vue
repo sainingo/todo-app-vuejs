@@ -17,7 +17,7 @@ watch(task, (newTask) => {
     <div class="lg:bg-none bg-bg-mobile-light h-[200px] bg-center bg-no-repeat bg-cover text-white" >
     <div class="flex justify-between p-8">
       <h1 class="text-2xl tracking-[.4em] font-semibold">TODO</h1>
-      <img src="./assets/images/ICON-MOON.SVG" width="25px" height="20px" alt="moon icon" />
+      <img src="./assets/images/ICON-MOON.SVG" width="25px" height="20px" alt="moon icon" class="cursor-pointer"/>
     </div>
   <div class="flex">
     <input type="text" placeholder="Create a new todo" class="text-center p-4 rounded w-[80%] mx-auto outline-none text-black"/>
