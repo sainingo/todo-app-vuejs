@@ -23,15 +23,46 @@ watch(task, (newTask) => {
   </div>
   </div>
   <section>
-    <div class="w-[80%] mx-auto mt-[-30px] bg-white p-2 rounded border shadow-lg h-[500px]">
-      <div class="flex justify-between m-2 border-b-2 p-2">
-        <input type="checkbox" class="rounded-full border-none bg-gray-100"/>
+    <div class="w-[80%] mx-auto mt-[-30px] bg-white p-2 rounded border shadow-2xl h-[400px] font-light">
+      <div class="flex justify-between m-4 border-b-2 p-2">
+        <input type="checkbox" class="border-none  w-[1.1rem]  rounded-full outline-none"/>
         <span class="w-full ml-4">Jog around the park</span>
         <button>
           <img src="./assets/images/ICON-CROSS.SVG" />
         </button>
       </div>
+      <div class="flex justify-between m-4 border-b-2 p-2">
+        <input type="checkbox" class="border-none  w-[1.1rem]  rounded-full outline-none"/>
+        <span class="w-full ml-4">Jog around the park</span>
+        <button>
+          <img src="./assets/images/ICON-CROSS.SVG" />
+        </button>
+      </div>
+      <div class="flex justify-between m-4 border-b-2 p-2">
+        <input type="checkbox" class="border-none  w-[1.1rem]  rounded-full outline-none"/>
+        <span class="w-full ml-4">Jog around the park</span>
+        <button>
+          <img src="./assets/images/ICON-CROSS.SVG" />
+        </button>
+      </div>
+      <div class="flex justify-between m-4 border-b-2 p-2">
+        <input type="checkbox" class="border-none  w-[1.1rem]  rounded-full outline-none"/>
+        <span class="w-full ml-4">Jog around the park</span>
+        <button>
+          <img src="./assets/images/ICON-CROSS.SVG" />
+        </button>
+      </div>
+      <div class="flex justify-between m-4 p-4 font-normal text-gray-500">
+      <span>5 items left</span>
+      <button>Clear Completed</button>
     </div>
+    </div>
+    <div class="flex justify-center gap-10 p-4 border border-gray-200 w-[80%] mx-auto mt-8 rounded shadow-lg font-normal text-gray-600 text-lg hover:cursor">
+      <button>All</button>
+      <button>Active</button>
+      <button>Completed</button>
+    </div>
+    <p class="font-extralight text-center m-20 text-gray-600">Drag and drop to reorder list</p>
   </section>
 </div>
 </template>
