@@ -49,7 +49,7 @@ onMounted(() => {
 <template>
 <div class="dark:bg-very-dark-blue dark:h-screen">
   <div class="">
-    <div class="lg:w-full lg:dark:bg-bg-desktop-dark lg:bg-bg-desktop-light lg:dark:bg-no-repeat lg:bg-cover bg-bg-mobile-light dark:bg-bg-mobile-dark dark:brightness-125 h-[200px] bg-center bg-no-repeat bg-cover text-white" >
+    <div class="lg:w-full lg:dark:bg-bg-desktop-dark lg:bg-bg-desktop-light lg:dark:bg-no-repeat lg:bg-center lg:h-[250px] bg-bg-mobile-light dark:bg-bg-mobile-dark dark:brightness-125 h-[200px] bg-center bg-no-repeat bg-cover text-white" >
     <div class="flex justify-between p-8 lg:w-[50%] mx-auto">
       <h1 class="text-2xl tracking-[.4em] font-semibold">TODO</h1>
       <button @click="toggleDark()">
