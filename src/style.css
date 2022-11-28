@@ -11,3 +11,12 @@ body {
     /* font-family: 'Rubik', sans-serif; */
 }
 
+.done {
+    text-decoration: line-through;
+    opacity: .5;
+}
+
+.active {
+  color: rgb(15, 132, 228);
+}
+

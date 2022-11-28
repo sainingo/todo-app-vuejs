@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
@@ -15,6 +16,13 @@ module.exports = {
         'sun-icon': "url('/src/assets/images/ICON-SUN.SVG')",
         'cross-icon': "url('/src/assets/images/ICON-CROSS.SVG')",
         'check-icon': "url('/src/assets/images/ICON-CHECK.SVG')"
+      },
+      colors: {
+        "dark-grayish-blue": 'hsl(236, 9%, 61%)',
+        "very-dark-blue": 'hsl(235, 21%, 11%)',
+        "very-dark-desaturated": 'hsl(235, 24%, 19%)',
+        "light-grayish-blue": 'hsl(235, 24%, 19%)',
+        "light-text": 'hsl(236, 33%, 92%)',
       }
     },
   },
