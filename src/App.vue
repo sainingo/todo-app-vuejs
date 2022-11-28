@@ -6,8 +6,35 @@ const task = ref('')
 
 const input_todo = ref('')
 
-watch(task, (newTask) => {
-  localStorage.setItem('task', newTask)
+watch(todos, (newTask) => {
+  localStorage.setItem('task', JSON.stringify(newTask))
+}, {
+  deep: true
+})
+
+const addTodo = (e) => {
+  e.preventDefault();
+  if (input_todo.value.trim() === '' || input_todo.value === null) {
+    return
+  }
+
+  todos.value.push({
+    task: input_todo.value,
+    completed: false,
+    createdAt: new Date().getTime()
+  })
+  input_todo.value = ''
+}
+
+const toggleComplete = (todo) => {
+  todo.completed = !todo.completed;
+}
+
+const removeTodo = (idx) => {
+  todos.value.splice(idx, 1);
+}
+onMounted(() => {
+  todos.value = JSON.parse(localStorage.getItem('task')) || []
 })
 </script>
 
@@ -19,42 +46,21 @@ watch(task, (newTask) => {
       <h1 class="text-2xl tracking-[.4em] font-semibold">TODO</h1>
       <img src="./assets/images/ICON-MOON.SVG" width="25px" height="20px" alt="moon icon" class="cursor-pointer"/>
     </div>
-  <div class="flex">
-    <input type="text" placeholder="Create a new todo" class="text-center p-4 rounded w-[80%] mx-auto outline-none text-black"/>
-  </div>
+    <form class="flex" @submit="addTodo">
+    <input type="text" placeholder="Create a new todo" v-model="input_todo" class="text-center p-4 rounded w-[80%] mx-auto outline-none text-black"/>
+  </form>
   </div>
   <section>
     <div class="w-[80%] mx-auto mt-[-30px] bg-white p-2 rounded border shadow-2xl h-[400px] lg:h-[500px] lg:p-4 font-light">
-      <div class="flex justify-between m-4 border-b-2 p-2">
-        <input type="checkbox" class="border-none  w-[1.1rem]  rounded-full outline-none"/>
-        <span class="w-full ml-4">Jog around the park</span>
-        <button>
-          <img src="./assets/images/ICON-CROSS.SVG" />
-        </button>
-      </div>
-      <div class="flex justify-between m-4 border-b-2 p-2">
-        <input type="checkbox" class="border-none  w-[1.1rem]  rounded-full outline-none"/>
-        <span class="w-full ml-4">Jog around the park</span>
-        <button>
-          <img src="./assets/images/ICON-CROSS.SVG" />
-        </button>
-      </div>
-      <div class="flex justify-between m-4 border-b-2 p-2">
-        <input type="checkbox" class="border-none  w-[1.1rem]  rounded-full outline-none"/>
-        <span class="w-full ml-4">Jog around the park</span>
-        <button>
-          <img src="./assets/images/ICON-CROSS.SVG" />
-        </button>
-      </div>
-      <div class="flex justify-between m-4 border-b-2 p-2">
-        <input type="checkbox" class="border-none  w-[1.1rem]  rounded-full outline-none"/>
-        <span class="w-full ml-4">Jog around the park</span>
-        <button>
+      <div v-for="(todo, idx) in todos"  class="flex justify-between m-4 border-b-2 p-2">
+        <input type="checkbox" @click="toggleComplete(todo)" class="border-none  w-[1.1rem] rounded-full outline-none input-checkbox"/>
+        <span class="w-full ml-6"  :class="{done: todo.completed}">{{todo.task}}</span>
+        <button @click="removeTodo(idx)">
           <img src="./assets/images/ICON-CROSS.SVG" />
         </button>
       </div>
       <div class="flex justify-between m-4 p-4 font-normal text-gray-500">
-      <span>5 items left</span>
+      <span>{{todos.length}} items left</span>
       <button>Clear Completed</button>
     </div>
     </div>
@@ -68,3 +74,11 @@ watch(task, (newTask) => {
   </div>
 </div>
 </template>
+
+<style>
+
+.done {
+    text-decoration: line-through;
+    opacity: .5;
+}
+</style>
