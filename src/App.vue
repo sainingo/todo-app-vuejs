@@ -33,6 +33,10 @@ const toggleComplete = (todo) => {
 const removeTodo = (idx) => {
   todos.value.splice(idx, 1);
 }
+
+const clearCompleted = () => {
+  todos.value = todos.value.filter(todo => !todo.completed)
+}
 onMounted(() => {
   todos.value = JSON.parse(localStorage.getItem('task')) || []
 })
@@ -61,11 +65,11 @@ onMounted(() => {
       </div>
       <div class="flex justify-between m-4 p-4 font-normal text-gray-500">
       <span>{{todos.length}} items left</span>
-      <button>Clear Completed</button>
+      <button @click="clearCompleted">Clear Completed</button>
     </div>
     </div>
     <div class="flex justify-center gap-10 p-4 border border-gray-200 w-[80%] mx-auto mt-8 rounded shadow-lg font-normal text-gray-600 text-lg hover:cursor">
-      <button>All</button>
+      <button :class="{active: todos.length > 0}">All</button>
       <button>Active</button>
       <button>Completed</button>
     </div>
@@ -80,5 +84,9 @@ onMounted(() => {
 .done {
     text-decoration: line-through;
     opacity: .5;
+}
+
+.active {
+  color: rgb(15, 132, 228);
 }
 </style>
