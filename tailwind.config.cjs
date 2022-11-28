@@ -12,9 +12,9 @@ module.exports = {
         'bg-mobile-dark': "url('/src/assets/images/BG-MOBILE-DARK.JPG')",
         'bg-desktop-light': "url('/src/assets/images/bg-desktop-light.jpg')",
         'bg-desktop-dark': "url('/src/assets/images/bg-desktop-dark.jpg')",
-        'moon-icon': "url('/src/assets/images/ICON-MOON.SVG')",
+        'moon-icon': "url('/src/assets/images/icon-moon.svg')",
         'sun-icon': "url('/src/assets/images/ICON-SUN.SVG')",
-        'cross-icon': "url('/src/assets/images/ICON-CROSS.SVG')",
+        'cross-icon': "url('/src/assets/images/icon-cross.svg')",
         'check-icon': "url('/src/assets/images/ICON-CHECK.SVG')"
       },
       colors: {
