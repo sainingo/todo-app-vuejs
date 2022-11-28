@@ -53,7 +53,7 @@ onMounted(() => {
     <div class="flex justify-between p-8 lg:w-[50%] mx-auto">
       <h1 class="text-2xl tracking-[.4em] font-semibold">TODO</h1>
       <button @click="toggleDark()">
-        <img src='./assets/images/icon-moon.svg' alt="moon icon" class="cursor-pointer dark:bg-sun-icon"/>
+        <img src='../public/images/icon-moon.svg' alt="moon icon" class="cursor-pointer dark:bg-sun-icon"/>
       </button>
     </div>
     <form class="flex lg:w-[50%] mx-auto " @submit="addTodo">
@@ -66,7 +66,7 @@ onMounted(() => {
         <input type="checkbox" @click="toggleComplete(todo)" class="border-none  w-[1.1rem] rounded-full outline-none input-checkbox"/>
         <span class="w-full ml-6"  :class="{done: todo.completed}">{{todo.task}}</span>
         <button @click="removeTodo(idx)">
-          <img src="./assets/images/icon-cross.svg" />
+          <img src="../public/images/icon-cross.svg" />
         </button>
       </div>
       <div class="flex justify-between m-4 p-4 font-normal text-gray-500">
